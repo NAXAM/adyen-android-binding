@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.Adyen.Droid", "Naxam.Adyen.Droid\Naxam.Adyen.Droid.csproj", "{016AB622-D2F2-41B8-83E7-51C3733FF440}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenUtils.Droid", "Naxam.Adyen.Droid\Naxam.AdyenUtils.Droid.csproj", "{016AB622-D2F2-41B8-83E7-51C3733FF440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenCore.Droid", "Naxam.AdyenCore.Droid\Naxam.AdyenCore.Droid.csproj", "{41C5C915-456B-4B8A-B521-3798D2317F4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenCardScan.Droid", "Naxam.AdyenCardScan.Droid\Naxam.AdyenCardScan.Droid.csproj", "{F77C1944-7330-4024-A078-8ECF2DC9C921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenUI.Droid", "Naxam.AdyenUI.Droid\Naxam.AdyenUI.Droid.csproj", "{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{016AB622-D2F2-41B8-83E7-51C3733FF440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{016AB622-D2F2-41B8-83E7-51C3733FF440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{016AB622-D2F2-41B8-83E7-51C3733FF440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C5C915-456B-4B8A-B521-3798D2317F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C5C915-456B-4B8A-B521-3798D2317F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C5C915-456B-4B8A-B521-3798D2317F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C5C915-456B-4B8A-B521-3798D2317F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77C1944-7330-4024-A078-8ECF2DC9C921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77C1944-7330-4024-A078-8ECF2DC9C921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77C1944-7330-4024-A078-8ECF2DC9C921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77C1944-7330-4024-A078-8ECF2DC9C921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
