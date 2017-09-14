@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenCardScan.Droid",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenUI.Droid", "Naxam.AdyenUI.Droid\Naxam.AdyenUI.Droid.csproj", "{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutDemoQs", "CheckoutDemoQs\CheckoutDemoQs.csproj", "{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,12 @@ Global
 		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
