@@ -25,7 +25,7 @@ namespace CustomUiApplication
             public ImageView imageView;
         }
 
-        IssuerListAdapter(Activity context, List<InputDetail.Item> issuers) : base(context, Resource.Layout.payment_method_list, issuers)
+        public IssuerListAdapter(Activity context, List<InputDetail.Item> issuers) : base(context, Resource.Layout.payment_method_list, issuers)
         {
             //Log.d(TAG, "IssuerListAdapter()");
             this.context = context;

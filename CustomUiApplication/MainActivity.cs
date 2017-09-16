@@ -9,6 +9,8 @@ using Com.Adyen.Core.Interfaces;
 using Android.Content;
 using Com.Adyen.Core;
 using CustomWithCheckOutUiQs;
+using Android.Support.CustomTabs;
+using Com.Adyen.Core.Models.Paymentdetails;
 
 namespace CustomUiApplication
 {
@@ -63,13 +65,71 @@ namespace CustomUiApplication
                    // Log.d(TAG, "paymentRequestDetailsListener.onRedirectRequired(): " + redirectUrl);
                     uriCallback = returnUriCallback;
                     CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-                    CustomTabsIntent customTabsIntent = builder.build();
-                    customTabsIntent.launchUrl(context, Uri.parse(redirectUrl));
+                    CustomTabsIntent customTabsIntent = builder.Build();
+                    customTabsIntent.LaunchUrl(context,Android.Net.Uri.Parse(redirectUrl));
 
+                },
+                PaymentDetailsRequired = (paymentRequest, inputDetails, callback) =>
+                {
+                    // Log.d(TAG, "paymentRequestDetailsListener.onPaymentDetailsRequired()");
+                    String paymentMethodType = paymentRequest.PaymentMethod.GetType();
+
+                    if (PaymentMethod.Type.Card.Equals(paymentMethodType))
+                    {
+
+                        CreditCardFragment creditCardFragment = new CreditCardFragment();
+                        Bundle bundle = new Bundle();
+                        //ONE CLICK CHECK
+                        bool isOneClick = InputDetailsUtil.ContainsKey(inputDetails, "cardDetails.cvc");
+                        if (isOneClick)
+                        {
+                            bundle.PutBoolean("oneClick", true);
+                        }
+                        creditCardFragment.setCreditCardInfoListener(new CreditCardInfoListener
+                        {
+                            CreditCardInfoProvided = (creditCardInfo) =>
+                            {
+                                if (isOneClick)
+                                {
+                                    CVCOnlyPaymentDetails cvcOnlyPaymentDetails = new CVCOnlyPaymentDetails(inputDetails);
+                                    cvcOnlyPaymentDetails.FillCvc(creditCardInfo);
+                                    callback.CompletionWithPaymentDetails(cvcOnlyPaymentDetails);
+
+                                }
+                                else
+                                {
+                                    CreditCardPaymentDetails creditCardPaymentDetails = new CreditCardPaymentDetails(inputDetails);
+                                    creditCardPaymentDetails.FillCardToken(creditCardInfo);
+                                    callback.CompletionWithPaymentDetails(creditCardPaymentDetails);
+                                }
+
+                            }
+
+
+                        });
+                        bundle.PutString("public_key", paymentRequest.PublicKey);
+                        bundle.PutString("generation_time", paymentRequest.GenerationTime);
+                        creditCardFragment.Arguments=bundle;
+
+                        SupportFragmentManager.BeginTransaction().Replace(Android.Resource.Id.Content,
+                                creditCardFragment).AddToBackStack(null).CommitAllowingStateLoss();
+
+                    }
                 }
                   
 
             };
+        }
+    }
+
+    public class CreditCardInfoListener : CreditCardFragment.CreditCardInfoListener
+    {
+        public Action<string> CreditCardInfoProvided;
+
+
+        public void onCreditCardInfoProvided(string paymentDetails)
+        {
+            CreditCardInfoProvided?.Invoke(paymentDetails);
         }
     }
 }
