@@ -117,6 +117,10 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CheckoutDemoQs\CheckoutDemoQs.csproj">
+      <Project>{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}</Project>
+      <Name>CheckoutDemoQs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CustomWithCheckOutUiQs\CustomWithCheckOutUiQs.csproj">
       <Project>{9355AF32-79DD-4452-9887-291EF27EAA63}</Project>
       <Name>CustomWithCheckOutUiQs</Name>

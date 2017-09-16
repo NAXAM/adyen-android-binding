@@ -14,7 +14,7 @@ using Com.Adyen.Core.Utils;
 
 namespace CustomUiApplication
 {
-    public class PaymentDataEntryFragment : Fragment
+    public class PaymentDataEntryFragment : Android.Support.V4.App.Fragment
     {
         private static String TAG = "Morejump from Naxam";
         private PaymentRequestListener paymentRequestListener;
