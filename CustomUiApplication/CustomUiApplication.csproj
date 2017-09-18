@@ -53,6 +53,15 @@
     <Reference Include="Naxam.Adyencse.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Naxam.Adyencse.Droid.1.1.1\lib\MonoAndroid10\Naxam.Adyencse.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Naxam.ReactiveStreams.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Naxam.ReactiveStreams.Droid.1.0.0\lib\MonoAndroid10\Naxam.ReactiveStreams.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Naxam.RxAndroid.Droid, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Naxam.RxAndroid.Droid.2.0.1\lib\MonoAndroid10\Naxam.RxAndroid.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Naxam.RxJava2.Droid, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Naxam.RxJava2.Droid.2.1.2\lib\MonoAndroid10\Naxam.RxJava2.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
