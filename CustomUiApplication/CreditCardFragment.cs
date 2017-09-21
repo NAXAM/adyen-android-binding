@@ -16,6 +16,7 @@ namespace CustomUiApplication
 {
     public class CreditCardFragment : Fragment
     {
+        // file here
         private static String TAG = "Morejump from Naxam";
         private CreditCardInfoListener creditCardInfoListener;
         private bool oneClick;
