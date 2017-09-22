@@ -11,7 +11,6 @@ using Com.Adyen.Core.Models.Paymentdetails;
 using System.Collections.Generic;
 using Org.Json;
 using Com.Adyen.Core.Utils;
-using CheckoutDemoQs;
 using Java.Nio.Charset;
 using Android.Text;
 using Com.Adyen.UI.Fragments;
@@ -22,27 +21,22 @@ namespace CustomWithCheckOutUiQs
     [Activity(Label = "CustomWithCheckOutUiQs", MainLauncher = true)]
     public class MainActivity : FragmentActivity, IPaymentRequestListener, PaymentDataEntryFragment.PaymentRequestListener
     {
-        // CreditCardFragment
-        // maybe chane three properties later in  BuildConfig class
+        
         private string SERVER_URL = "https://checkoutshopper-test.adyen.com/checkoutshopper/demoserver/";
         private string API_KEY = "10001|BEF02479D565932A3A3AA08740D9A02B0746D091A9DDBF7C7B72206A195EA5AEB402A810F8FCCD4177408031499714503422D8B3726D7465F8136967776D690D871CBD6B9E7671433F2754F427744CA6DD0F2E82C892C09F7306AE6ACE4D9F728FE400FEB5D7EC0B7E26071EB7683983D3058BABB47BC83D7C9CDB681562BC5FA41CF4F52A322084DC0DE699E0FF53E724C752F5EFFB082367AD5810834B348061CC1F993B96720D7E8B9795A4B9EB80C0CC66E896FCB96D8D27CA055D95646102C9935475B896F05E1D4E1034F34FF044649743F41BF4E312339ED2D0DA9430B3E6090D61E7781938E3FBF865E5EEC2E0763C81B8F15120D4398D9282A6A975";
         private string API_HEADER_KEY = "0101398667F12C8EC76C1C47C349BF9F7439A9FDD57B92431986597A531BD27DB88A2B639BCB7A1FE16E2B079871B0EBD0DFC8DCCC4AF7A2228B441710C15D5B0DBEE47CDCB5588C48224C6007";
-        //
-        private static String TAG = "MoreJump from Naxam";
-
         private PaymentSetupRequest paymentSetupRequest;
-
-        private static String SETUP = "setup";
-        private static String VERIFY = "verify";
+        private static string SETUP = "setup";
+        private static string VERIFY = "verify";
 
         // Add the URL for your server here; or you can use the demo server of Adyen: https://checkoutshopper-test.adyen.com/checkoutshopper/demoserver/
-        private static String merchantServerUrl = "";
+        private static string merchantServerUrl = "";
 
         // Add the api secret key for your server here; you can retrieve this key from customer area.
-        private static String merchantApiSecretKey = "";
+        private static string merchantApiSecretKey = "";
 
         // Add the header key for merchant server api secret key here; e.g. "x-demo-server-api-key"
-        private static String merchantApiHeaderKeyForApiSecretKey = "";
+        private static string merchantApiHeaderKeyForApiSecretKey = "";
 
         private static Context context;
         private IUriCallback uriCallback;
@@ -50,17 +44,10 @@ namespace CustomWithCheckOutUiQs
         private PaymentRequest paymentRequest;
         //
         private PaymentRequestDetailsListener paymentRequestDetailsListener;
-
-
-
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Set our view from the "main" layout resource
-           // SetContentView(Resource.Layout.Main);
-
             paymentRequestDetailsListener = new PaymentRequestDetailsListener
             {
                 PaymentMethodSelectionRequired = (paymentRequest, recurringMethods, otherMethods, callback) =>
@@ -92,7 +79,7 @@ namespace CustomWithCheckOutUiQs
                 //
                 PaymentDetailsRequired = (paymentRequest, inputDetails, callback) =>
                 {
-                    String paymentMethodType = paymentRequest.PaymentMethod.GetType();
+                    var paymentMethodType = paymentRequest.PaymentMethod.GetType();
 
                     if (PaymentMethod.Type.Card.Equals(paymentMethodType))
                     {
@@ -161,7 +148,6 @@ namespace CustomWithCheckOutUiQs
                     }
                     else
                     {
-                        //Log.w(TAG, "UI for " + paymentMethodType + " has not been implemented.");
                         Toast.MakeText(this, "UI for " + paymentMethodType + " has not been implemented.", ToastLength.Long).Show();
                         paymentRequest.Cancel();
                     }
@@ -169,7 +155,6 @@ namespace CustomWithCheckOutUiQs
 
             };
 
-            //            Log.d(TAG, "onCreate()");
             context = this;
             Android.Net.Uri uri = Intent.Data;
             if (uri == null)
@@ -326,7 +311,7 @@ namespace CustomWithCheckOutUiQs
 
         }
 
-       
+
         #endregion
     }
 
@@ -390,5 +375,20 @@ namespace CustomWithCheckOutUiQs
         }
     }
 
+    public class HttpResponseCallback : Java.Lang.Object, IHttpResponseCallback
+    {
+        public Action<Java.Lang.Throwable> Failure;
+        public Action<byte[]> Success;
+
+        public void OnFailure(Java.Lang.Throwable p0)
+        {
+            Failure?.Invoke(p0);
+        }
+
+        public void OnSuccess(byte[] p0)
+        {
+            Success?.Invoke(p0);
+        }
+    }
 }
 

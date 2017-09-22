@@ -164,10 +164,6 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CheckoutDemoQs\CheckoutDemoQs.csproj">
-      <Project>{F9C7A104-EBC5-4E8A-B4D1-A440E682D1B7}</Project>
-      <Name>CheckoutDemoQs</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Naxam.AdyenCore.Droid\Naxam.AdyenCore.Droid.csproj">
       <Project>{41c5c915-456b-4b8a-b521-3798d2317f4e}</Project>
       <Name>Naxam.AdyenCore.Droid</Name>

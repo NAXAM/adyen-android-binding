@@ -31,7 +31,7 @@ namespace CustomWithCheckOutUiQs
             return amount;
         }
 
-        public void setAmount( Amount amount)
+        public void setAmount(Amount amount)
         {
             this.amount = amount;
         }
@@ -41,7 +41,7 @@ namespace CustomWithCheckOutUiQs
             return merchantReference;
         }
 
-        public void setMerchantReference( String merchantReference)
+        public void setMerchantReference(String merchantReference)
         {
             this.merchantReference = merchantReference;
         }
@@ -51,7 +51,7 @@ namespace CustomWithCheckOutUiQs
             return shopperIP;
         }
 
-        public void setShopperIP( String shopperIP)
+        public void setShopperIP(String shopperIP)
         {
             this.shopperIP = shopperIP;
         }
@@ -61,7 +61,7 @@ namespace CustomWithCheckOutUiQs
             return shopperLocale;
         }
 
-        public void setShopperLocale( String shopperLocale)
+        public void setShopperLocale(String shopperLocale)
         {
             this.shopperLocale = shopperLocale;
         }
@@ -71,7 +71,7 @@ namespace CustomWithCheckOutUiQs
             return merchantAccount;
         }
 
-        public void setMerchantAccount( String merchantAccount)
+        public void setMerchantAccount(String merchantAccount)
         {
             this.merchantAccount = merchantAccount;
         }
@@ -81,7 +81,7 @@ namespace CustomWithCheckOutUiQs
             return countryCode;
         }
 
-        public void setCountryCode( String countryCode)
+        public void setCountryCode(String countryCode)
         {
             this.countryCode = countryCode;
         }
@@ -91,7 +91,7 @@ namespace CustomWithCheckOutUiQs
             return paymentDeadline;
         }
 
-        public void setPaymentDeadline( String paymentDeadline)
+        public void setPaymentDeadline(String paymentDeadline)
         {
             this.paymentDeadline = paymentDeadline;
         }
@@ -101,7 +101,7 @@ namespace CustomWithCheckOutUiQs
             return returnURL;
         }
 
-        public void setReturnURL( String returnURL)
+        public void setReturnURL(String returnURL)
         {
             this.returnURL = returnURL;
         }
@@ -111,14 +111,14 @@ namespace CustomWithCheckOutUiQs
             return paymentToken;
         }
 
-        public void setPaymentToken( String paymentToken)
+        public void setPaymentToken(String paymentToken)
         {
             this.paymentToken = paymentToken;
         }
 
-    public String getSetupDataString()
+        public String getSetupDataString()
         {
-             JSONObject jsonObject = new JSONObject();
+            JSONObject jsonObject = new JSONObject();
             try
             {
                 jsonObject.Put("reference", merchantReference);
@@ -129,24 +129,22 @@ namespace CustomWithCheckOutUiQs
                 jsonObject.Put("countryCode", countryCode);
                 jsonObject.Put("sessionValidity", paymentDeadline);
 
-                 JSONObject paymentAmount = new JSONObject();
+                JSONObject paymentAmount = new JSONObject();
                 paymentAmount.Put("currency", amount.Currency);
                 paymentAmount.Put("value", amount.Value);
                 jsonObject.Put("amount", paymentAmount);
-
                 // HACK
                 jsonObject.Put("shopperReference", "aap");
-
                 //Device fingerprint
                 jsonObject.Put("sdkToken", paymentToken);
 
-
             }
-            catch ( JSONException jsonException) {
+            catch (JSONException jsonException)
+            {
                 //TODO: What to do?
             }
 
             return jsonObject.ToString();
-            }
         }
+    }
 }
