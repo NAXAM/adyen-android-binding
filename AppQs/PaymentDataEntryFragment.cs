@@ -12,12 +12,13 @@ using Android.Support.V4.App;
 using CheckoutDemoQs;
 using Com.Adyen.Core.Models;
 using Com.Adyen.Core.Utils;
+using Android.Util;
 
 namespace AppQs
 {
     public class PaymentDataEntryFragment : Fragment
     {
-        private static String TAG = "Morejump from Naxam";
+        private static String TAG = "PaymentDataEntryFragment";
         private PaymentRequestListener paymentRequestListener;
         private PaymentSetupRequest paymentSetupRequest;
         private View fragmentView;
@@ -34,42 +35,34 @@ namespace AppQs
         {
             base.OnAttach(context);
             this.paymentRequestListener = (PaymentRequestListener)context;
-
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             fragmentView = inflater.Inflate(Resource.Layout.activity_main, container, false);
-
-             Button proceedButton = (Button)fragmentView.FindViewById(Resource.Id.proceed_button);
+            Button proceedButton = (Button)fragmentView.FindViewById(Resource.Id.proceed_button);
             proceedButton.Click += (s, e) =>
             {
-               paymentSetupRequest = buildPaymentRequest(fragmentView);
+                paymentSetupRequest = buildPaymentRequest(fragmentView);
                 paymentRequestListener.onPaymentRequested(paymentSetupRequest);
 
             };
-
-        return fragmentView;
+            return fragmentView;
         }
 
-        private PaymentSetupRequest buildPaymentRequest( View view) 
+        private PaymentSetupRequest buildPaymentRequest(View view)
         {
-           // Log.v(TAG, "buildPaymentRequest()");
-        PaymentSetupRequest paymentRequest = new PaymentSetupRequest();
-         String amountValueString = ((EditText) view.FindViewById(Resource.Id.orderAmountEntry)).Text.ToString();
-         String amountCurrencyString = ((EditText) view.FindViewById(Resource.Id.orderCurrencyEntry))
-                .Text.ToString();
+            Log.Verbose(TAG, "buildPaymentRequest()");
+            PaymentSetupRequest paymentRequest = new PaymentSetupRequest();
+            String amountValueString = ((EditText)view.FindViewById(Resource.Id.orderAmountEntry)).Text.ToString();
+            String amountCurrencyString = ((EditText)view.FindViewById(Resource.Id.orderCurrencyEntry)).Text.ToString();
+            paymentRequest.setAmount(new Amount(AmountUtil.ParseMajorAmount(amountCurrencyString, amountValueString), amountCurrencyString));
+            paymentRequest.setCountryCode(((EditText)view.FindViewById(Resource.Id.countryEntry)).Text.ToString());
+            paymentRequest.setShopperLocale(((EditText)view.FindViewById(Resource.Id.shopperLocaleEntry)).Text.ToString());
+            paymentRequest.setMerchantAccount(((EditText)view.FindViewById(Resource.Id.merchantAccountEntry)).Text.ToString());
+            String maxNumberOfInstallments = ((String)((Spinner)view.FindViewById(Resource.Id.installmentsEntry)).SelectedItem);
+            paymentRequest.setMaxNumberOfInstallments(maxNumberOfInstallments);
+            return paymentRequest;
+        }
 
-        paymentRequest.setAmount(new Amount(AmountUtil.ParseMajorAmount(amountCurrencyString, amountValueString),
-                amountCurrencyString));
-        paymentRequest.setCountryCode(((EditText) view.FindViewById(Resource.Id.countryEntry)).Text.ToString());
-        paymentRequest.setShopperLocale(((EditText) view.FindViewById(Resource.Id.shopperLocaleEntry)).Text.ToString());
-        paymentRequest.setMerchantAccount(((EditText) view.FindViewById(Resource.Id.merchantAccountEntry)).Text
-                .ToString());
-        String maxNumberOfInstallments = ((String)((Spinner)view.FindViewById(Resource.Id.installmentsEntry)).SelectedItem);
-        paymentRequest.setMaxNumberOfInstallments(maxNumberOfInstallments);
-
-        return paymentRequest;
     }
-
-}
 }

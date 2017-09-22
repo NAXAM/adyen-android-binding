@@ -11,12 +11,13 @@ using Android.Views;
 using Android.Widget;
 using Com.Adyen.Core.Models;
 using Com.Adyen.Core.Utils;
+using Android.Util;
 
 namespace CustomUiApplication
 {
     public class PaymentDataEntryFragment : Android.Support.V4.App.Fragment
     {
-        private static String TAG = "Morejump from Naxam";
+        private static String TAG = "PaymentDataEntryFragment";
         private PaymentRequestListener paymentRequestListener;
         private PaymentSetupRequest paymentSetupRequest;
         private View fragmentView;
@@ -38,43 +39,32 @@ namespace CustomUiApplication
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            //return base.OnCreateView(inflater, container, savedInstanceState);
             fragmentView = inflater.Inflate(Resource.Layout.activity_main, container, false);
-
-             Button proceedButton = (Button)fragmentView.FindViewById(Resource.Id.proceed_button);
+            Button proceedButton = (Button)fragmentView.FindViewById(Resource.Id.proceed_button);
             proceedButton.Click += (s, e) =>
             {
-                
-                    paymentSetupRequest = buildPaymentRequest(fragmentView);
-                    paymentRequestListener.onPaymentRequested(paymentSetupRequest);
-                };
-
-        return fragmentView;
+                paymentSetupRequest = buildPaymentRequest(fragmentView);
+                paymentRequestListener.onPaymentRequested(paymentSetupRequest);
+            };
+            return fragmentView;
         }
 
-        private PaymentSetupRequest buildPaymentRequest( View view)
+        private PaymentSetupRequest buildPaymentRequest(View view)
         {
-           // Log.v(TAG, "buildPaymentRequest()");
-        PaymentSetupRequest paymentRequest = new PaymentSetupRequest();
-         String amountValueString = ((EditText) view.FindViewById(Resource.Id.orderAmountEntry)).Text.ToString();
-         String amountCurrencyString = ((EditText) view.FindViewById(Resource.Id.orderCurrencyEntry))
-                .Text.ToString();
+            Log.Verbose(TAG, "buildPaymentRequest()");
+            PaymentSetupRequest paymentRequest = new PaymentSetupRequest();
+            String amountValueString = ((EditText)view.FindViewById(Resource.Id.orderAmountEntry)).Text.ToString();
+            String amountCurrencyString = ((EditText)view.FindViewById(Resource.Id.orderCurrencyEntry)).Text.ToString();
+            paymentRequest.setAmount(new Amount(AmountUtil.ParseMajorAmount(amountCurrencyString, amountValueString),amountCurrencyString));
+            paymentRequest.setCountryCode(((EditText)view.FindViewById(Resource.Id.countryEntry)).Text.ToString());
+            paymentRequest.setShopperLocale(((EditText)view.FindViewById(Resource.Id.shopperLocaleEntry)).Text.ToString());
+            paymentRequest.setShopperIP(((EditText)view.FindViewById(Resource.Id.shopperIpEntry)).Text.ToString());
+            paymentRequest.setMerchantAccount(((EditText)view.FindViewById(Resource.Id.merchantAccountEntry)).Text.ToString());
+            paymentRequest.setMerchantReference(((EditText)view.FindViewById(Resource.Id.merchantReferenceEntry)).Text.ToString());
+            paymentRequest.setPaymentDeadline(((EditText)view.FindViewById(Resource.Id.paymentDeadlineEntry)).Text.ToString());
+            paymentRequest.setReturnURL(((EditText)view.FindViewById(Resource.Id.returnUrlEntry)).Text.ToString());
+            return paymentRequest;
+        }
 
-        paymentRequest.setAmount(new Amount(AmountUtil.ParseMajorAmount(amountCurrencyString, amountValueString),
-                amountCurrencyString));
-        paymentRequest.setCountryCode(((EditText) view.FindViewById(Resource.Id.countryEntry)).Text.ToString());
-        paymentRequest.setShopperLocale(((EditText) view.FindViewById(Resource.Id.shopperLocaleEntry)).Text.ToString());
-        paymentRequest.setShopperIP(((EditText) view.FindViewById(Resource.Id.shopperIpEntry)).Text.ToString());
-        paymentRequest.setMerchantAccount(((EditText) view.FindViewById(Resource.Id.merchantAccountEntry)).Text
-                .ToString());
-        paymentRequest.setMerchantReference(((EditText) view.FindViewById(Resource.Id.merchantReferenceEntry)).Text
-                .ToString());
-        paymentRequest.setPaymentDeadline(((EditText) view.FindViewById(Resource.Id.paymentDeadlineEntry)).Text
-                .ToString());
-        paymentRequest.setReturnURL(((EditText) view.FindViewById(Resource.Id.returnUrlEntry)).Text.ToString());
-
-        return paymentRequest;
     }
-
-}
 }

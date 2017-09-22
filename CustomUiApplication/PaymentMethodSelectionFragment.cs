@@ -16,7 +16,7 @@ namespace CustomUiApplication
 {
     public class PaymentMethodSelectionFragment : Android.Support.V4.App.Fragment
     {
-        private static String TAG = "More from Naxam";
+        private static String TAG = "PaymentMethodSelectionFragment";
         private PaymentMethodSelectionListener paymentMethodSelectionListener;
         private List<PaymentMethod> paymentMethods = new List<PaymentMethod>();// maybe change this later
 
@@ -38,7 +38,6 @@ namespace CustomUiApplication
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // return base.OnCreateView(inflater, container, savedInstanceState);
             View view = inflater.Inflate(Resource.Layout.payment_method_selection_fragment, container, false);
             PaymentListAdapter paymentListAdapter = new PaymentListAdapter(Activity, paymentMethods);
             ListView listView = (ListView)view.FindViewById(Android.Resource.Id.List);
@@ -47,13 +46,9 @@ namespace CustomUiApplication
             {
                 PaymentMethod selected = paymentMethods[e.Position];
                 paymentMethodSelectionListener.onPaymentMethodSelected(selected);
-
             };
             paymentMethods.Clear();
-          //  paymentMethods.AddRange(((MainActivity)Activity).getPreferredPaymentMethods);
-           // paymentMethods.AddRange(((MainActivity)getActivity()).getAvailablePaymentMethods());
             paymentListAdapter.NotifyDataSetChanged();
-
             // Inflate the layout for this fragment
             return view;
 

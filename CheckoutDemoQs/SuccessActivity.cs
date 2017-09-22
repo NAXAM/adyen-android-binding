@@ -25,9 +25,7 @@ namespace CheckoutDemoQs
             this.RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.activity_success);
             context = this;
-
             SetStatusBarTranslucent(true);
-
             backToShopAction = (Button)FindViewById(Resource.Id.back_to_shop_action);
             backToShopAction.Click += (s, e) =>
             {

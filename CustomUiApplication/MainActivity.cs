@@ -22,8 +22,7 @@ namespace CustomUiApplication
     [Activity(Label = "CustomUiApplication", MainLauncher = true)]
     public class MainActivity : FragmentActivity, PaymentDataEntryFragment.PaymentRequestListener, PaymentMethodSelectionFragment.PaymentMethodSelectionListener
     {
-        private String TAG = "Morejump from Naxam";
-        // maybe chane three properties later in  BuildConfig class
+        private String TAG = "CustomUiApplication";
         private string SERVER_URL = "https://checkoutshopper-test.adyen.com/checkoutshopper/demoserver/";
         private string API_KEY = "10001|BEF02479D565932A3A3AA08740D9A02B0746D091A9DDBF7C7B72206A195EA5AEB402A810F8FCCD4177408031499714503422D8B3726D7465F8136967776D690D871CBD6B9E7671433F2754F427744CA6DD0F2E82C892C09F7306AE6ACE4D9F728FE400FEB5D7EC0B7E26071EB7683983D3058BABB47BC83D7C9CDB681562BC5FA41CF4F52A322084DC0DE699E0FF53E724C752F5EFFB082367AD5810834B348061CC1F993B96720D7E8B9795A4B9EB80C0CC66E896FCB96D8D27CA055D95646102C9935475B896F05E1D4E1034F34FF044649743F41BF4E312339ED2D0DA9430B3E6090D61E7781938E3FBF865E5EEC2E0763C81B8F15120D4398D9282A6A975";
         private string API_HEADER_KEY = "0101398667F12C8EC76C1C47C349BF9F7439A9FDD57B92431986597A531BD27DB88A2B639BCB7A1FE16E2B079871B0EBD0DFC8DCCC4AF7A2228B441710C15D5B0DBEE47CDCB5588C48224C6007";
@@ -55,9 +54,6 @@ namespace CustomUiApplication
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Set our view from the "main" layout resource
-           // SetContentView(Resource.Layout.Main);
             paymentRequestDetailsListener = new PaymentRequestDetailsListener
             {
                 PaymentMethodSelectionRequired = (paymentRequest, recurringMethods, otherMethods, callback) =>
@@ -73,7 +69,7 @@ namespace CustomUiApplication
                   },
                 RedirectRequired = (paymentRequest, redirectUrl, returnUriCallback) =>
                 {
-                    // Log.d(TAG, "paymentRequestDetailsListener.onRedirectRequired(): " + redirectUrl);
+                    Log.Debug(TAG, "paymentRequestDetailsListener.onRedirectRequired(): " + redirectUrl);
                     uriCallback = returnUriCallback;
                     CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
                     CustomTabsIntent customTabsIntent = builder.Build();
@@ -82,7 +78,7 @@ namespace CustomUiApplication
                 },
                 PaymentDetailsRequired = (paymentRequest, inputDetails, callback) =>
                 {
-                    // Log.d(TAG, "paymentRequestDetailsListener.onPaymentDetailsRequired()");
+                    Log.Debug(TAG, "paymentRequestDetailsListener.onPaymentDetailsRequired()");
                     String paymentMethodType = paymentRequest.PaymentMethod.GetType();
 
                     if (PaymentMethod.Type.Card.Equals(paymentMethodType))
@@ -105,7 +101,6 @@ namespace CustomUiApplication
                                     CVCOnlyPaymentDetails cvcOnlyPaymentDetails = new CVCOnlyPaymentDetails(inputDetails);
                                     cvcOnlyPaymentDetails.FillCvc(creditCardInfo);
                                     callback.CompletionWithPaymentDetails(cvcOnlyPaymentDetails);
-
                                 }
                                 else
                                 {
@@ -139,7 +134,6 @@ namespace CustomUiApplication
                                 idealPaymentDetails.FillIssuer(issuers[i]);
                                 dialogInterface.Dismiss();
                                 callback.CompletionWithPaymentDetails(idealPaymentDetails);
-
                             }
 
                         });
@@ -148,13 +142,11 @@ namespace CustomUiApplication
                     else
                     {
                         String message = "UI for " + paymentMethodType + " has not been implemented.";
-                        //Log.w(TAG, message);
+                        Log.Warn(TAG, message);
                         Toast.MakeText(this, message, ToastLength.Long).Show();
                         paymentRequest.Cancel();
                     }
                 }
-
-
             };
             paymentRequestListener = new PaymentRequestListener
             {
@@ -212,7 +204,7 @@ namespace CustomUiApplication
             }
             else
             {
-               // throw new IllegalStateException("Application was supposed to be declared singleTask");
+                throw new Java.Lang.IllegalStateException("Application was supposed to be declared singleTask");
             }
         }
 
@@ -285,7 +277,7 @@ namespace CustomUiApplication
             }
             catch (JSONException jsonException)
             {
-                //Log.e(TAG, "Setup failed", jsonException);
+                Log.Error(TAG, "Setup failed", jsonException);
             }
             return jsonObject.ToString();
         }
@@ -306,7 +298,6 @@ namespace CustomUiApplication
             }
             catch (JSONException e)
             {
-                //e.printStackTrace();
                 Toast.MakeText(this, "Failed to verify payment.", ToastLength.Long).Show();
                 return;
             }
@@ -337,7 +328,6 @@ namespace CustomUiApplication
                         }
                         catch (JSONException e)
                         {
-                            //e.printStackTrace();
                             resultString = "Failed to verify payment.";
                         }
                         Toast.MakeText(this, resultString, ToastLength.Long).Show();
@@ -362,8 +352,6 @@ namespace CustomUiApplication
                 base.OnBackPressed();
             }
         }
-
-
     }
 
     public class CreditCardInfoListener : CreditCardFragment.CreditCardInfoListener

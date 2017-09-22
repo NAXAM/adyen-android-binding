@@ -11,12 +11,13 @@ using Android.Views;
 using Android.Widget;
 using Com.Adyen.Core.Models.Paymentdetails;
 using Com.Adyen.Core.Utils;
+using Android.Util;
 
 namespace CustomUiApplication
 {
     public class IssuerListAdapter : ArrayAdapter<InputDetail.Item>
     {
-        private String TAG = "Morejump from Naxam";
+        private String TAG = "IssuerListAdapter";
         private Activity context;
         private List<InputDetail.Item> issuers;
         private class ViewHolder : Java.Lang.Object
@@ -27,14 +28,13 @@ namespace CustomUiApplication
 
         public IssuerListAdapter(Activity context, List<InputDetail.Item> issuers) : base(context, Resource.Layout.payment_method_list, issuers)
         {
-            //Log.d(TAG, "IssuerListAdapter()");
+            Log.Debug(TAG, "IssuerListAdapter()");
             this.context = context;
             this.issuers = issuers;
         }
 
         public override View GetView(int position, View view, ViewGroup parent)
         {
-            // return base.GetView(position, convertView, parent);
             ViewHolder viewHolder;
             if (view == null)
             {

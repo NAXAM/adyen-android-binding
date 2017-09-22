@@ -17,8 +17,7 @@ namespace CustomUiApplication
 {
     public class PaymentListAdapter : ArrayAdapter<PaymentMethod>
     {
-        private static String TAG = "Morejump from Naxam";
-
+        private static String TAG = "PaymentListAdapter";
         private Activity context;
         private List<PaymentMethod> paymentMethods;
         private LayoutInflater layoutInflater;
@@ -37,7 +36,6 @@ namespace CustomUiApplication
 
         public override View GetView(int position, View view, ViewGroup parent)
         {
-            //return base.GetView(position, convertView, parent);        }
             ViewHolder viewHolder;
             if (view == null)
             {
