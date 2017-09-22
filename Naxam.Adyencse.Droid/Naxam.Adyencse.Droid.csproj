@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}</ProjectGuid>
+    <ProjectGuid>{6BD08165-EC83-4A1D-97E3-5EEF776220A7}</ProjectGuid>
     <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Naxam.AdyenUI.Droid</RootNamespace>
-    <AssemblyName>Naxam.AdyenUI.Droid</AssemblyName>
+    <RootNamespace>Naxam.Adyencse.Droid</RootNamespace>
+    <AssemblyName>Naxam.Adyencse.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
@@ -65,9 +65,6 @@
     <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
     </Reference>
-    <Reference Include="Naxam.Adyencse.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Naxam.Adyencse.Droid.1.1.1\lib\MonoAndroid10\Naxam.Adyencse.Droid.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,27 +72,13 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\ui-1.7.1.aar" />
+    <LibraryProjectZip Include="Jars\adyen-cse-1.0.3.aar" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\Metadata.xml" />
     <TransformFile Include="Transforms\EnumFields.xml" />
     <TransformFile Include="Transforms\EnumMethods.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Naxam.AdyenCardScan.Droid\Naxam.AdyenCardScan.Droid.csproj">
-      <Project>{f77c1944-7330-4024-a078-8ecf2dc9c921}</Project>
-      <Name>Naxam.AdyenCardScan.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Naxam.AdyenCore.Droid\Naxam.AdyenCore.Droid.csproj">
-      <Project>{41c5c915-456b-4b8a-b521-3798d2317f4e}</Project>
-      <Name>Naxam.AdyenCore.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj">
-      <Project>{6BD08165-EC83-4A1D-97E3-5EEF776220A7}</Project>
-      <Name>Naxam.Adyencse.Droid</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
