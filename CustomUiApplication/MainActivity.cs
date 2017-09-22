@@ -8,16 +8,14 @@ using System.Collections.Generic;
 using Com.Adyen.Core.Interfaces;
 using Android.Content;
 using Com.Adyen.Core;
-using CustomWithCheckOutUiQs;
 using Android.Support.CustomTabs;
 using Com.Adyen.Core.Models.Paymentdetails;
 using Org.Json;
 using Com.Adyen.Core.Utils;
-using CheckoutDemoQs;
-using Java.Util;
 using Java.Nio.Charset;
 using Android.Util;
 using Android.Text;
+using AdyenQsCommon;
 
 namespace CustomUiApplication
 {
