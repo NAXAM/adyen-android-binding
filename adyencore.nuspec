@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>Naxam.AdyenCore.Droid</id>
+        <version>1.7.1</version>
+        <description>Xamarin Binding Library - AdyenCore Android SDK</description>
+        <authors>NAXAM CO.,LTD</authors>
+        <owners>NAXAM CO.,LTD</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Naxam - AdyenCore for Android</title>
+        <releaseNotes>AdyenCore Android SDK v1.7.1</releaseNotes>
+        <summary>Xamarin Binding Library - AdyenCore Android SDK</summary>
+        <iconUrl>https://avatars3.githubusercontent.com/u/3453</iconUrl>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/NAXAM/adyen-android-binding/</projectUrl>
+        <copyright>Copyright (c) 2017 NAXAM</copyright>
+        <tags>Xamarin.Android, AdyenCore, sdk</tags>
+        <dependencies>
+            <dependency id="Xamarin.Android.Support.v7.AppCompat" version="25.4.0.2" />
+            <dependency id="Naxam.ReactiveStreams.Droid" version="1.0.0" />
+            <dependency id="Naxam.RxAndroid.Droid" version="2.0.1" />
+            <dependency id="Naxam.RxJava2.Droid" version="2.1.2" />
+        </dependencies>
+    </metadata>
+    <!-- Optional 'files' node -->
+    <files>
+        <file src="Naxam.AdyenCore.Droid/bin/Release/Naxam.AdyenCore.Droid.dll" target="lib/MonoAndroid10/Naxam.AdyenCore.Droid.dll" />
+    </files>
+</package>

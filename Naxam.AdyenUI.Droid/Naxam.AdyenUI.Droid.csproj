@@ -65,9 +65,6 @@
     <Reference Include="Xamarin.Android.Support.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
     </Reference>
-    <Reference Include="Naxam.Adyencse.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Naxam.Adyencse.Droid.1.1.1\lib\MonoAndroid10\Naxam.Adyencse.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Android.Support.Transition">
       <HintPath>..\packages\Xamarin.Android.Support.Transition.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Transition.dll</HintPath>
     </Reference>
@@ -103,6 +100,10 @@
     </ProjectReference>
     <ProjectReference Include="..\Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj">
       <Project>{6BD08165-EC83-4A1D-97E3-5EEF776220A7}</Project>
+      <Name>Naxam.Adyencse.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj">
+      <Project>{6bd08165-ec83-4a1d-97e3-5eef776220a7}</Project>
       <Name>Naxam.Adyencse.Droid</Name>
     </ProjectReference>
   </ItemGroup>

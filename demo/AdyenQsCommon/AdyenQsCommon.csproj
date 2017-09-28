@@ -52,7 +52,7 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Naxam.Adyen.Droid\Naxam.AdyenUtils.Droid.csproj">
+    <ProjectReference Include="..\..\Naxam.AdyenUtils.Droid\Naxam.AdyenUtils.Droid.csproj">
       <Project>{016ab622-d2f2-41b8-83e7-51c3733ff440}</Project>
       <Name>Naxam.AdyenUtils.Droid</Name>
     </ProjectReference>

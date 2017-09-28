@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>Naxam.AdyenUtils.Droid</id>
+        <version>1.8.0</version>
+        <description>Xamarin Binding Library - AdyenUtils Android SDK</description>
+        <authors>NAXAM CO.,LTD</authors>
+        <owners>NAXAM CO.,LTD</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Naxam - AdyenUtils for Android</title>
+        <releaseNotes>AdyenUtils Android SDK v1.8.0</releaseNotes>
+        <summary>Xamarin Binding Library - AdyenUtils Android SDK</summary>
+        <iconUrl>https://avatars3.githubusercontent.com/u/3453</iconUrl>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/NAXAM/adyen-android-binding/</projectUrl>
+        <copyright>Copyright (c) 2017 NAXAM</copyright>
+        <tags>Xamarin.Android, AdyenUtils, sdk</tags>
+        <dependencies>
+            <dependency id="Xamarin.Android.Support.v7.AppCompat" version="25.4.0.2" />
+        </dependencies>
+    </metadata>
+    <!-- Optional 'files' node -->
+    <files>
+        <file src="Naxam.AdyenUtils.Droid/bin/Release/Naxam.AdyenUtils.Droid.dll" target="lib/MonoAndroid10/Naxam.AdyenUtils.Droid.dll" />
+    </files>
+</package>

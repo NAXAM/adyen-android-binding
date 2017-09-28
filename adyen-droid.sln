@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenUtils.Droid", "Naxam.Adyen.Droid\Naxam.AdyenUtils.Droid.csproj", "{016AB622-D2F2-41B8-83E7-51C3733FF440}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenUtils.Droid", "Naxam.AdyenUtils.Droid\Naxam.AdyenUtils.Droid.csproj", "{016AB622-D2F2-41B8-83E7-51C3733FF440}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenCore.Droid", "Naxam.AdyenCore.Droid\Naxam.AdyenCore.Droid.csproj", "{41C5C915-456B-4B8A-B521-3798D2317F4E}"
 EndProject
