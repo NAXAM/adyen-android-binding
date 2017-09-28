@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>Naxam.AdyenUtils.Droid</id>
-        <version>1.8.0</version>
+        <version>1.8.0.1</version>
         <description>Xamarin Binding Library - AdyenUtils Android SDK</description>
         <authors>NAXAM CO.,LTD</authors>
         <owners>NAXAM CO.,LTD</owners>

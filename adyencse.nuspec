@@ -2,26 +2,26 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <!-- Required elements-->
-        <id>Naxam.AdyenCardScan.Droid</id>
-        <version>1.7.1.1</version>
-        <description>Xamarin Binding Library - AdyenCardScan Android SDK</description>
+        <id>Naxam.AdyenCse.Droid</id>
+        <version>1.0.3.1</version>
+        <description>Xamarin Binding Library - AdyenCse Android SDK</description>
         <authors>NAXAM CO.,LTD</authors>
         <owners>NAXAM CO.,LTD</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <title>Naxam - AdyenCardScan for Android</title>
-        <releaseNotes>AdyenCardScan Android SDK v1.7.1</releaseNotes>
-        <summary>Xamarin Binding Library - AdyenCardScan Android SDK</summary>
+        <title>Naxam - AdyenCse for Android</title>
+        <releaseNotes>AdyenCse Android SDK v1.0.3</releaseNotes>
+        <summary>Xamarin Binding Library - AdyenCse Android SDK</summary>
         <iconUrl>https://avatars3.githubusercontent.com/u/3453</iconUrl>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
         <projectUrl>https://github.com/NAXAM/adyen-android-binding/</projectUrl>
         <copyright>Copyright (c) 2017 NAXAM</copyright>
-        <tags>Xamarin.Android, AdyenCardScan, sdk</tags>
+        <tags>Xamarin.Android, AdyenCse, sdk</tags>
         <dependencies>
             <dependency id="Xamarin.Android.Support.v7.AppCompat" version="25.4.0.2" />
         </dependencies>
     </metadata>
     <!-- Optional 'files' node -->
     <files>
-        <file src="Naxam.AdyenCardScan.Droid/bin/Release/Naxam.AdyenCardScan.Droid.dll" target="lib/MonoAndroid10/Naxam.AdyenCardScan.Droid.dll" />
+        <file src="Naxam.AdyenCse.Droid/bin/Release/Naxam.AdyenCse.Droid.dll" target="lib/MonoAndroid10/Naxam.AdyenCse.Droid.dll" />
     </files>
 </package>
