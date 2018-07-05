@@ -11,7 +11,7 @@ var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
 var VERSION = "1.14.2";
-var CSE_VERSION = "";
+var CSE_VERSION = "1.0.5";
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -21,11 +21,17 @@ var slnPath = "./adyen-droid.sln";
 var artifacts = new [] {
     new Artifact {
         Name = "CSE",
-        Version = VERSION,
+        Version = CSE_VERSION,
         AssemblyInfoPath = "./Naxam.AdyenCSE.Droid/Properties/AssemblyInfo.cs",
         NuspecPath = "./adyencse.nuspec",
         DownloadUrl = "https://bintray.com/adyen/adyen/download_file?file_path=com%2Fadyen%2Fcse%2Fadyen-cse%2F{0}%2Fadyen-cse-{0}.aar",
-        JarPath = "./Naxam.AdyenCSE.Droid/Jars/adyen-cse.aar"
+        JarPath = "./Naxam.AdyenCSE.Droid/Jars/adyen-cse.aar",
+        Dependencies = new []{
+            new NuSpecDependency {
+                Id = "Xamarin.Android.Support.v7.AppCompat",
+                Version = "25.4.0.2"
+            }
+        }
     },
     new Artifact {
         Name = "Core",
@@ -33,7 +39,37 @@ var artifacts = new [] {
         AssemblyInfoPath = "./Naxam.AdyenCore.Droid/Properties/AssemblyInfo.cs",
         NuspecPath = "./adyencore.nuspec",
         DownloadUrl = "https://bintray.com/adyen/adyen/download_file?file_path=com%2Fadyen%2Fcheckout%2Fcore%2F{0}%2Fcore-{0}.aar",
-        JarPath = "./Naxam.AdyenCore.Droid/Jars/core.aar"
+        JarPath = "./Naxam.AdyenCore.Droid/Jars/core.aar",
+        Dependencies = new []{
+            new NuSpecDependency {
+                Id = "Xamarin.Android.Support.v7.AppCompat",
+                Version = "25.4.0.2"
+            },
+            new NuSpecDependency {
+                Id = "Xamarin.Android.Support.CustomTabs",
+                Version = "25.4.0.2"
+            },
+            new NuSpecDependency {
+                Id = "Xamarin.Android.Support.Annotations",
+                Version = "25.4.0.2"
+            },
+            new NuSpecDependency {
+                Id = "Naxam.ReactiveStreams.Droid",
+                Version = "1.0.0"
+            },
+            new NuSpecDependency {
+                Id = "Naxam.RxAndroid.Droid",
+                Version = "2.0.1"
+            },
+            new NuSpecDependency {
+                Id = "Naxam.RxJava2.Droid",
+                Version = "2.1.2"
+            },
+            new NuSpecDependency {
+                Id = "Naxam.AdyenCSE.Droid",
+                Version = CSE_VERSION
+            }
+        }
     },
     new Artifact {
         Name = "Utils",
@@ -41,15 +77,13 @@ var artifacts = new [] {
         AssemblyInfoPath = "./Naxam.AdyenUtils.Droid/Properties/AssemblyInfo.cs",
         NuspecPath = "./adyenutils.nuspec",
         DownloadUrl = "https://bintray.com/adyen/adyen/download_file?file_path=com%2Fadyen%2Fcheckout%2Futils%2F{0}%2Futils-{0}.aar",
-        JarPath = "./Naxam.AdyenUtils.Droid/Jars/utils.aar"
-    },
-    new Artifact {
-        Name = "UI",
-        Version = VERSION,
-        AssemblyInfoPath = "./Naxam.AdyenUI.Droid/Properties/AssemblyInfo.cs",
-        NuspecPath = "./adyenui.nuspec",
-        DownloadUrl = "https://bintray.com/adyen/adyen/download_file?file_path=com%2Fadyen%2Fcheckout%2Fui%2F{0}%2Fui-{0}.aar",
-        JarPath = "./Naxam.AdyenUI.Droid/Jars/ui.aar"
+        JarPath = "./Naxam.AdyenUtils.Droid/Jars/utils.aar",
+        Dependencies = new []{
+            new NuSpecDependency {
+                Id = "Xamarin.Android.Support.v7.AppCompat",
+                Version = "25.4.0.2"
+            }
+        }
     },
     new Artifact {
         Name = "CardScan",
@@ -57,7 +91,39 @@ var artifacts = new [] {
         AssemblyInfoPath = "./Naxam.AdyenCardScan.Droid/Properties/AssemblyInfo.cs",
         NuspecPath = "./adyencardscan.nuspec",
         DownloadUrl = "https://bintray.com/adyen/adyen/download_file?file_path=com%2Fadyen%2Fcheckout%2Fcardscan%2F{0}%2Fcardscan-{0}.aar",
-        JarPath = "./Naxam.AdyenCardScan.Droid/Jars/ui.aar"
+        JarPath = "./Naxam.AdyenCardScan.Droid/Jars/cardscan.aar",
+        Dependencies = new []{
+            new NuSpecDependency {
+                Id = "Xamarin.Android.Support.v7.AppCompat",
+                Version = "25.4.0.2"
+            }
+        }
+    },
+    new Artifact {
+        Name = "UI",
+        Version = VERSION,
+        AssemblyInfoPath = "./Naxam.AdyenUI.Droid/Properties/AssemblyInfo.cs",
+        NuspecPath = "./adyenui.nuspec",
+        DownloadUrl = "https://bintray.com/adyen/adyen/download_file?file_path=com%2Fadyen%2Fcheckout%2Fui%2F{0}%2Fui-{0}.aar",
+        JarPath = "./Naxam.AdyenUI.Droid/Jars/ui.aar",
+        Dependencies = new []{
+            new NuSpecDependency {
+                Id = "Naxam.AdyenCSE.Droid",
+                Version = CSE_VERSION
+            },
+            new NuSpecDependency {
+                Id = "Naxam.AdyenCardCore.Droid",
+                Version = VERSION
+            },
+            new NuSpecDependency {
+                Id = "Naxam.AdyenCardScan.Droid",
+                Version = VERSION
+            },
+            new NuSpecDependency {
+                Id = "Naxam.AdyenUtils.Droid",
+                Version = VERSION
+            }
+        }
     }
 };
 
@@ -69,8 +135,8 @@ Task("Downloads")
     .Does(() =>
 {
     foreach(var artifact in artifacts) {
-        var downloadUrl = string.Format(artifact.DownloadUrl, VERSION);
-        var jarPath = string.Format(artifact.JarPath, VERSION);
+        var downloadUrl = string.Format(artifact.DownloadUrl, artifact.Version);
+        var jarPath = string.Format(artifact.JarPath, artifact.Version);
 
         DownloadFile(downloadUrl, jarPath);
     }
@@ -93,16 +159,7 @@ Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    foreach(var artifact in artifacts) {
-        NuGetRestore(artifact.SolutionPath);
-    }
-    foreach(var artifact in artifacts) {
-        NuGetUpdate(artifact.SolutionPath, new NuGetUpdateSettings {
-            Id = new [] {
-                "Naxam.Paypal.OneTouch"
-            }, 
-        });
-    }
+    NuGetRestore(slnPath);
 });
 
 Task("Build")
@@ -110,9 +167,7 @@ Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
 {
-    foreach(var artifact in artifacts) {
-        MSBuild(artifact.SolutionPath, settings => settings.SetConfiguration(configuration));
-    }
+    MSBuild(slnPath, settings => settings.SetConfiguration(configuration));
 });
 
 Task("UpdateVersion")
@@ -130,17 +185,13 @@ Task("Pack")
 {
     foreach(var artifact in artifacts) {
         NuGetPack(artifact.NuspecPath, new NuGetPackSettings {
-            Version = VERSION,
-            // Dependencies = new []{
-            //     new NuSpecDependency {
-            //         Id = "Naxam.BrainTree.Core",
-            //         Version = VERSION
-            //     },
-            //     new NuSpecDependency {
-            //         Id = "Naxam.Paypal.OneTouch",
-            //         Version = VERSION
-            //     }
-            // }
+            Version = artifact.Version,
+            Title = $"Adyen for Android - {artifact.Name}",
+            Description = $"Xamarin.Android binding library - Adyen for Android - {artifact.Name}",
+            Dependencies = artifact.Dependencies,
+            ReleaseNotes = new [] {
+                $"Adyen for Android - {artifact.Name} v{artifact.Version}"
+            }
         });
     }
 });

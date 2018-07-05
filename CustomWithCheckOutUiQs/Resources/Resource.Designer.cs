@@ -1876,8 +1876,8 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b0018
 			public const int add = 2131427352;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int adyen_bank_account_holder_name = 2131427505;
+			// aapt resource value: 0x7f0b00b6
+			public const int adyen_bank_account_holder_name = 2131427510;
 			
 			// aapt resource value: 0x7f0b0074
 			public const int adyen_credit_card_cvc = 2131427444;
@@ -1897,8 +1897,8 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b006c
 			public const int adyen_payment_form_layout = 2131427436;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int adyen_sepa_iban_edit_text = 2131427504;
+			// aapt resource value: 0x7f0b00b5
+			public const int adyen_sepa_iban_edit_text = 2131427509;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int alertTitle = 2131427387;
@@ -1951,11 +1951,11 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b0080
 			public const int collectCreditCardData = 2131427456;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int collect_direct_debit_data = 2131427509;
+			// aapt resource value: 0x7f0b00b3
+			public const int collect_direct_debit_data = 2131427507;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int consent_direct_debit_checkbox = 2131427508;
+			// aapt resource value: 0x7f0b00b9
+			public const int consent_direct_debit_checkbox = 2131427513;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int contentPanel = 2131427377;
@@ -1965,6 +1965,12 @@ namespace CustomWithCheckOutUiQs
 			
 			// aapt resource value: 0x7f0b005f
 			public const int countryTitle = 2131427423;
+			
+			// aapt resource value: 0x7f0b00b0
+			public const int country_code_spinner = 2131427504;
+			
+			// aapt resource value: 0x7f0b00af
+			public const int country_code_title = 2131427503;
 			
 			// aapt resource value: 0x7f0b0076
 			public const int credit_card_cvc_label = 2131427446;
@@ -2059,14 +2065,14 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b0091
 			public const int issuer_methods_list = 2131427473;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int layout_click_area_consent_checkbox = 2131427507;
+			// aapt resource value: 0x7f0b00b8
+			public const int layout_click_area_consent_checkbox = 2131427512;
 			
 			// aapt resource value: 0x7f0b007e
 			public const int layout_click_area_save_card = 2131427454;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int layout_direct_debit_consent = 2131427506;
+			// aapt resource value: 0x7f0b00b7
+			public const int layout_direct_debit_consent = 2131427511;
 			
 			// aapt resource value: 0x7f0b0089
 			public const int layout_pay = 2131427465;
@@ -2191,8 +2197,8 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b0040
 			public const int radio = 2131427392;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int redirectBrowserWebView = 2131427503;
+			// aapt resource value: 0x7f0b00b4
+			public const int redirectBrowserWebView = 2131427508;
 			
 			// aapt resource value: 0x7f0b006a
 			public const int returnUrlEntry = 2131427434;
@@ -2308,6 +2314,12 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b000b
 			public const int tabMode = 2131427339;
 			
+			// aapt resource value: 0x7f0b00b2
+			public const int telephone_number_edit_text = 2131427506;
+			
+			// aapt resource value: 0x7f0b00b1
+			public const int telephone_number_label = 2131427505;
+			
 			// aapt resource value: 0x7f0b00a8
 			public const int text = 2131427496;
 			
@@ -2344,8 +2356,8 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int verificationTextView = 2131427510;
+			// aapt resource value: 0x7f0b00ba
+			public const int verificationTextView = 2131427514;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int withText = 2131427361;
@@ -2554,25 +2566,28 @@ namespace CustomWithCheckOutUiQs
 			public const int payment_method_selection_fragment = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int redirect_handler_activity = 2130968630;
+			public const int qiwi_wallet_fragment = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int select_dialog_item_material = 2130968631;
+			public const int redirect_handler_activity = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int select_dialog_multichoice_material = 2130968632;
+			public const int select_dialog_item_material = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int select_dialog_singlechoice_material = 2130968633;
+			public const int select_dialog_multichoice_material = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int sepa_direct_debit_fragment = 2130968634;
+			public const int select_dialog_singlechoice_material = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int support_simple_spinner_dropdown_item = 2130968635;
+			public const int sepa_direct_debit_fragment = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int verification_activity = 2130968636;
+			public const int support_simple_spinner_dropdown_item = 2130968636;
+			
+			// aapt resource value: 0x7f04003d
+			public const int verification_activity = 2130968637;
 			
 			static Layout()
 			{
@@ -2702,101 +2717,200 @@ namespace CustomWithCheckOutUiQs
 			// aapt resource value: 0x7f060012
 			public const int abc_toolbar_collapse_description = 2131099666;
 			
-			// aapt resource value: 0x7f06003e
-			public const int app_name = 2131099710;
+			// aapt resource value: 0x7f06005f
+			public const int app_name = 2131099743;
 			
 			// aapt resource value: 0x7f060021
-			public const int bank_account_number = 2131099681;
+			public const int cancelButton = 2131099681;
+			
+			// aapt resource value: 0x7f06005b
+			public const int country_code = 2131099739;
 			
 			// aapt resource value: 0x7f060022
-			public const int cancel_button = 2131099682;
+			public const int creditCard_cvcField_placeholder = 2131099682;
 			
 			// aapt resource value: 0x7f060023
-			public const int card_number = 2131099683;
-			
-			// aapt resource value: 0x7f060033
-			public const int card_number_of_installments = 2131099699;
+			public const int creditCard_cvcField_title = 2131099683;
 			
 			// aapt resource value: 0x7f060024
-			public const int cardholder_name = 2131099684;
-			
-			// aapt resource value: 0x7f060034
-			public const int cvc_cvv = 2131099700;
+			public const int creditCard_expiryDateField_invalid = 2131099684;
 			
 			// aapt resource value: 0x7f060025
-			public const int cvc_extended_hint_with_last_digits = 2131099685;
-			
-			// aapt resource value: 0x7f060035
-			public const int direct_debit_consent = 2131099701;
+			public const int creditCard_expiryDateField_month = 2131099685;
 			
 			// aapt resource value: 0x7f060026
-			public const int example = 2131099686;
+			public const int creditCard_expiryDateField_month_placeholder = 2131099686;
 			
 			// aapt resource value: 0x7f060027
-			public const int expiry_date = 2131099687;
-			
-			// aapt resource value: 0x7f060036
-			public const int font_sans_serif_light = 2131099702;
-			
-			// aapt resource value: 0x7f060037
-			public const int giropay_example = 2131099703;
+			public const int creditCard_expiryDateField_placeholder = 2131099687;
 			
 			// aapt resource value: 0x7f060028
-			public const int giropay_search_field_hint = 2131099688;
-			
-			// aapt resource value: 0x7f060038
-			public const int hint_card_number = 2131099704;
+			public const int creditCard_expiryDateField_title = 2131099688;
 			
 			// aapt resource value: 0x7f060029
-			public const int hint_cardholder_name = 2131099689;
-			
-			// aapt resource value: 0x7f060039
-			public const int hint_cvc_cvv = 2131099705;
+			public const int creditCard_expiryDateField_year = 2131099689;
 			
 			// aapt resource value: 0x7f06002a
-			public const int hint_expiry_date = 2131099690;
+			public const int creditCard_expiryDateField_year_placeholder = 2131099690;
 			
 			// aapt resource value: 0x7f06002b
-			public const int hint_iban_number = 2131099691;
-			
-			// aapt resource value: 0x7f06003a
-			public const int min_3_chars = 2131099706;
+			public const int creditCard_holderName = 2131099691;
 			
 			// aapt resource value: 0x7f06002c
-			public const int other_payment_methods_label = 2131099692;
+			public const int creditCard_holderName_placeholder = 2131099692;
 			
 			// aapt resource value: 0x7f06002d
-			public const int pay_with_amount = 2131099693;
+			public const int creditCard_installmentsField = 2131099693;
 			
 			// aapt resource value: 0x7f06002e
-			public const int preferred_payment_methods_label = 2131099694;
+			public const int creditCard_numberField_invalid = 2131099694;
 			
 			// aapt resource value: 0x7f06002f
-			public const int remember_card_hint = 2131099695;
+			public const int creditCard_numberField_placeholder = 2131099695;
+			
+			// aapt resource value: 0x7f060030
+			public const int creditCard_numberField_title = 2131099696;
+			
+			// aapt resource value: 0x7f060031
+			public const int creditCard_oneClickVerification_invalidInput_message = 2131099697;
+			
+			// aapt resource value: 0x7f060032
+			public const int creditCard_oneClickVerification_invalidInput_title = 2131099698;
+			
+			// aapt resource value: 0x7f060033
+			public const int creditCard_oneClickVerification_message = 2131099699;
+			
+			// aapt resource value: 0x7f060034
+			public const int creditCard_oneClickVerification_title = 2131099700;
+			
+			// aapt resource value: 0x7f060035
+			public const int creditCard_storeDetailsButton = 2131099701;
+			
+			// aapt resource value: 0x7f060036
+			public const int creditCard_success = 2131099702;
+			
+			// aapt resource value: 0x7f060037
+			public const int creditCard_title = 2131099703;
+			
+			// aapt resource value: 0x7f060038
+			public const int dismissButton = 2131099704;
+			
+			// aapt resource value: 0x7f060039
+			public const int error_message_cannotConnectToHost = 2131099705;
+			
+			// aapt resource value: 0x7f06003a
+			public const int error_message_cannotConnectToInternet = 2131099706;
+			
+			// aapt resource value: 0x7f06003b
+			public const int error_message_unknown = 2131099707;
+			
+			// aapt resource value: 0x7f06003c
+			public const int error_retryButton = 2131099708;
+			
+			// aapt resource value: 0x7f06003d
+			public const int error_subtitle_payment = 2131099709;
+			
+			// aapt resource value: 0x7f06003e
+			public const int error_subtitle_redirect = 2131099710;
+			
+			// aapt resource value: 0x7f06003f
+			public const int error_subtitle_refused = 2131099711;
+			
+			// aapt resource value: 0x7f060040
+			public const int error_title = 2131099712;
+			
+			// aapt resource value: 0x7f06005c
+			public const int example = 2131099740;
+			
+			// aapt resource value: 0x7f060041
+			public const int giropay_minimumLength = 2131099713;
+			
+			// aapt resource value: 0x7f060042
+			public const int giropay_noResults = 2131099714;
+			
+			// aapt resource value: 0x7f060043
+			public const int giropay_searchField_placeholder = 2131099715;
+			
+			// aapt resource value: 0x7f06005d
+			public const int hint_telehone_number = 2131099741;
+			
+			// aapt resource value: 0x7f060044
+			public const int holderName = 2131099716;
+			
+			// aapt resource value: 0x7f060045
+			public const int idealIssuer_selectField_placeholder = 2131099717;
+			
+			// aapt resource value: 0x7f060046
+			public const int idealIssuer_selectField_title = 2131099718;
+			
+			// aapt resource value: 0x7f060047
+			public const int oneClick_confirmationAlert_title = 2131099719;
+			
+			// aapt resource value: 0x7f060048
+			public const int payButton = 2131099720;
+			
+			// aapt resource value: 0x7f060049
+			public const int payButton_formatted = 2131099721;
+			
+			// aapt resource value: 0x7f06004a
+			public const int paymentMethods_moreMethodsButton = 2131099722;
+			
+			// aapt resource value: 0x7f06004b
+			public const int paymentMethods_otherMethods = 2131099723;
+			
+			// aapt resource value: 0x7f06004c
+			public const int paymentMethods_storedMethods = 2131099724;
+			
+			// aapt resource value: 0x7f06004d
+			public const int paymentMethods_title = 2131099725;
+			
+			// aapt resource value: 0x7f06004e
+			public const int payment_processing = 2131099726;
+			
+			// aapt resource value: 0x7f06004f
+			public const int payment_redirecting = 2131099727;
+			
+			// aapt resource value: 0x7f060050
+			public const int redirect_cannotOpenApp_appNotInstalledMessage = 2131099728;
+			
+			// aapt resource value: 0x7f060051
+			public const int redirect_cannotOpenApp_title = 2131099729;
 			
 			// aapt resource value: 0x7f060013
 			public const int search_menu_title = 2131099667;
 			
+			// aapt resource value: 0x7f060052
+			public const int sepaDirectDebit_consentButton = 2131099730;
+			
+			// aapt resource value: 0x7f060053
+			public const int sepaDirectDebit_ibanField_invalid = 2131099731;
+			
+			// aapt resource value: 0x7f060054
+			public const int sepaDirectDebit_ibanField_placeholder = 2131099732;
+			
+			// aapt resource value: 0x7f060055
+			public const int sepaDirectDebit_ibanField_title = 2131099733;
+			
+			// aapt resource value: 0x7f060056
+			public const int sepaDirectDebit_nameField_placeholder = 2131099734;
+			
+			// aapt resource value: 0x7f060057
+			public const int sepaDirectDebit_nameField_title = 2131099735;
+			
+			// aapt resource value: 0x7f060058
+			public const int sepa_ibanNumber = 2131099736;
+			
+			// aapt resource value: 0x7f060059
+			public const int sepa_ownerName = 2131099737;
+			
 			// aapt resource value: 0x7f060014
 			public const int status_bar_notification_info_overflow = 2131099668;
 			
-			// aapt resource value: 0x7f060030
-			public const int title_card_details = 2131099696;
+			// aapt resource value: 0x7f06005a
+			public const int storeDetails = 2131099738;
 			
-			// aapt resource value: 0x7f06003b
-			public const int title_giropay = 2131099707;
-			
-			// aapt resource value: 0x7f06003c
-			public const int title_issuers = 2131099708;
-			
-			// aapt resource value: 0x7f060031
-			public const int title_payment_methods = 2131099697;
-			
-			// aapt resource value: 0x7f06003d
-			public const int title_sepa = 2131099709;
-			
-			// aapt resource value: 0x7f060032
-			public const int title_verify_card = 2131099698;
+			// aapt resource value: 0x7f06005e
+			public const int telephone_number = 2131099742;
 			
 			static String()
 			{
