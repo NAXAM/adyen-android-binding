@@ -135,9 +135,9 @@
       <Project>{3B12EF9F-5B0F-4BAC-8486-BA01C480CEE0}</Project>
       <Name>Naxam.AdyenUI.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj">
+    <ProjectReference Include="..\Naxam.AdyenCSE.Droid\Naxam.AdyenCSE.Droid.csproj">
       <Project>{6BD08165-EC83-4A1D-97E3-5EEF776220A7}</Project>
-      <Name>Naxam.Adyencse.Droid</Name>
+      <Name>Naxam.AdyenCSE.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

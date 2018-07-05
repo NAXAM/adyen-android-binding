@@ -84,7 +84,7 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\core-1.7.1.aar" />
+    <LibraryProjectZip Include="Jars\core.aar" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +93,9 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj">
+    <ProjectReference Include="..\Naxam.AdyenCSE.Droid\Naxam.AdyenCSE.Droid.csproj">
       <Project>{6BD08165-EC83-4A1D-97E3-5EEF776220A7}</Project>
-      <Name>Naxam.Adyencse.Droid</Name>
+      <Name>Naxam.AdyenCSE.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />

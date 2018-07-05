@@ -269,9 +269,9 @@
       <Project>{3b12ef9f-5b0f-4bac-8486-ba01c480cee0}</Project>
       <Name>Naxam.AdyenUI.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj">
+    <ProjectReference Include="..\Naxam.AdyenCSE.Droid\Naxam.AdyenCSE.Droid.csproj">
       <Project>{6BD08165-EC83-4A1D-97E3-5EEF776220A7}</Project>
-      <Name>Naxam.Adyencse.Droid</Name>
+      <Name>Naxam.AdyenCSE.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

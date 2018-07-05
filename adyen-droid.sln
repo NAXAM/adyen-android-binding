@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdyenQsCommon", "demo\Adyen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{3F52B85F-6AED-479B-B5DF-9A5116E0195B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.Adyencse.Droid", "Naxam.Adyencse.Droid\Naxam.Adyencse.Droid.csproj", "{6BD08165-EC83-4A1D-97E3-5EEF776220A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.AdyenCSE.Droid", "Naxam.AdyenCSE.Droid\Naxam.AdyenCSE.Droid.csproj", "{6BD08165-EC83-4A1D-97E3-5EEF776220A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
