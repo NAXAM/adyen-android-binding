@@ -11,6 +11,7 @@ var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
 var VERSION = "1.14.2";
+var PATCH = ".1";
 var CSE_VERSION = "1.0.5";
 
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +68,7 @@ var artifacts = new [] {
             },
             new NuSpecDependency {
                 Id = "Naxam.AdyenCSE.Droid",
-                Version = CSE_VERSION
+                Version = CSE_VERSION + PATCH
             }
         }
     },
@@ -109,19 +110,19 @@ var artifacts = new [] {
         Dependencies = new []{
             new NuSpecDependency {
                 Id = "Naxam.AdyenCSE.Droid",
-                Version = CSE_VERSION
+                Version = CSE_VERSION + PATCH
             },
             new NuSpecDependency {
-                Id = "Naxam.AdyenCardCore.Droid",
-                Version = VERSION
+                Id = "Naxam.AdyenCore.Droid",
+                Version = VERSION + PATCH
             },
             new NuSpecDependency {
                 Id = "Naxam.AdyenCardScan.Droid",
-                Version = VERSION
+                Version = VERSION + PATCH
             },
             new NuSpecDependency {
                 Id = "Naxam.AdyenUtils.Droid",
-                Version = VERSION
+                Version = VERSION + PATCH
             }
         }
     }
@@ -156,15 +157,12 @@ Task("Clean")
 });
 
 Task("Restore-NuGet-Packages")
-    .IsDependentOn("Clean")
     .Does(() =>
 {
     NuGetRestore(slnPath);
 });
 
 Task("Build")
-    .IsDependentOn("Downloads")
-    .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
 {
     MSBuild(slnPath, settings => settings.SetConfiguration(configuration));
@@ -174,20 +172,19 @@ Task("UpdateVersion")
     .Does(() => 
 {
     foreach(var artifact in artifacts) {
-        ReplaceRegexInFiles(artifact.AssemblyInfoPath, "\\[assembly\\: AssemblyVersion([^\\]]+)\\]", string.Format("[assembly: AssemblyVersion(\"{0}\")]", VERSION));
+        ReplaceRegexInFiles(artifact.AssemblyInfoPath, "\\[assembly\\: AssemblyVersion([^\\]]+)\\]", string.Format("[assembly: AssemblyVersion(\"{0}\")]", artifact.Version + PATCH));
     }
 });
 
 Task("Pack")
-    .IsDependentOn("UpdateVersion")
-    .IsDependentOn("Build")
     .Does(() =>
 {
     foreach(var artifact in artifacts) {
         NuGetPack(artifact.NuspecPath, new NuGetPackSettings {
-            Version = artifact.Version,
+            Version = artifact.Version + PATCH,
             Title = $"Adyen for Android - {artifact.Name}",
             Description = $"Xamarin.Android binding library - Adyen for Android - {artifact.Name}",
+            Summary = $"Xamarin.Android binding library - Adyen for Android - {artifact.Name}",
             Dependencies = artifact.Dependencies,
             ReleaseNotes = new [] {
                 $"Adyen for Android - {artifact.Name} v{artifact.Version}"
@@ -201,6 +198,11 @@ Task("Pack")
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
+    // .IsDependentOn("Downloads")
+    .IsDependentOn("UpdateVersion")
+    // .IsDependentOn("Clean")
+    // .IsDependentOn("Restore-NuGet-Packages")
+    .IsDependentOn("Build")
     .IsDependentOn("Pack");
 
 //////////////////////////////////////////////////////////////////////

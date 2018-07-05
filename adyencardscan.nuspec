@@ -9,7 +9,6 @@
         <owners>NAXAM CO.,LTD</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <title>Naxam - AdyenCardScan for Android</title>
-        <releaseNotes>AdyenCardScan Android SDK v1.7.1</releaseNotes>
         <summary>Xamarin Binding Library - AdyenCardScan Android SDK</summary>
         <iconUrl>https://www.adyen.com/dam/jcr:39adc4db-76f7-4b9e-aec6-bfa21db4153c/adyen-logo-green.png</iconUrl>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
